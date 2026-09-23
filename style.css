@@ -569,18 +569,18 @@ body {
 }
 
 .flex-left {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
 }
 
 /* ミッション画像エリア */
 .mission-img-box {
-  flex: 0 0 220px;
+  flex: 0 0 300px;
 }
 
 /* スイーツ＋テキストのボックス */
 .content-box {
   flex: 1;
-  max-width: 380px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   gap: 15px;
