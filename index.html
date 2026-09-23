@@ -7,7 +7,93 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="container">
+    <header class="header">
+      <nav class="nav">
+        <a href="#about">How to use</a>
+        <a href="#photos">photos</a>
+        <a href="#collection-section">collection</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- 画像エリア（ポラロイド風の白枠付き） -->
+        <div class="photo-box">
+          <!-- ここにお好きな画像のパスを入れてください -->
+          <img src="img/cupcake.avif" alt="スイーツの写真" class="photo" />
+        </div>
+
+        <!-- テキストエリア -->
+        <div class="content">
+          <h1 class="heading">
+            DISCOVER LITTLE<br />
+            TREASURES<br />
+            <span class="sub-heading">BEHIND THE MAIN STREET</span>
+          </h1>
+          <p class="description">
+            大通りの賑わいを抜けて、静かな小道や路地裏を巡る旅へ。<br />
+            地元の人に愛される小さなお菓子屋さんや、伝統のスイーツを探す、特別な出会いを。
+          </p>
+        </div>
+
+        <!-- 重なって配置される手書き・太字風タイトル -->
+        <!-- <div class="title-overlay">sweet trip</div> -->
+      </div>
+    </section>
+    <section class="how-to-use" id="about">
+      <h2 class="section-title">How to use</h2>
+
+      <div class="step-container">
+        <!-- Step 1 -->
+        <div class="step-item step-1">
+          <div class="step-text">
+            <h3 class="step-heading">
+              <span class="step-num">Step1</span> お気に入りの写真を選ぶ
+            </h3>
+            <p class="step-desc">
+              好きな写真を選択し、その国を代表する伝統スイーツと誕生秘話をチェックしよう！
+            </p>
+          </div>
+          <div class="step-img-box tower-img">
+            <!-- ピサの斜塔イラストなどの画像が入ります -->
+            <img src="img/pisa.png" alt="start" class="step-img" />
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item step-2">
+          <div class="step-img-box cake-img">
+            <!-- ティラミス・スイーツイラストなどの画像が入ります -->
+            <img src="img/Group 25.png" alt="sweets" class="step-img" />
+          </div>
+          <div class="step-text">
+            <h3 class="step-heading">
+              <span class="step-num">Step2</span> 観光地間でお菓子を探そう
+            </h3>
+            <p class="step-desc">
+              missionに書かれた観光地と観光地間を探索し、隠された名物スイーツを探し出そう！ただし、できるだけ大通りを通るのは避けて、裏道に入ってみよう！
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item step-3">
+          <div class="step-text">
+            <h3 class="step-heading">
+              <span class="step-num">Step3</span> 集めたお菓子をコレクション
+            </h3>
+            <p class="step-desc">
+              見つけたお店の名前やとっておきの写真をフレームに収めて、あなただけのオリジナル旅図鑑をつくろう！
+            </p>
+          </div>
+          <div class="step-img-box colosseum-img">
+            <!-- コロッセオイラストなどの画像が入ります -->
+            <img src="img/corosseo.png" alt="goal" class="step-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="photos">
       <div class="photos">
         <div class="item1">
           <img src="img/oranda1.jpg" alt="" />
@@ -19,7 +105,7 @@
           <img src="img/suisu2.jpg" alt="" />
         </div>
         <div class="item4">
-          <img src="img/france2.jpg" alt="" />
+          <a href="france.html"> <img src="img/france2.jpg" alt="" /></a>
         </div>
         <div class="item5">
           <img src="img/italia1.jpg" alt="" />
@@ -50,9 +136,102 @@
         </div>
       </div>
     </section>
-    <!-- <section class="collection" id="collection"> 
-      <h2>France</h2>
-      <img src="img/collection.jpg" alt="" />
-    </section> -->
+    <section class="collection-section" id="collection-section">
+      <h2 class="section-title">France</h2>
+
+      <div class="map-container">
+        <!-- 中央のフランス地図エリア（※ご自身の地図画像をいれてください） -->
+        <div class="map-box">
+          <img src="img/map.png" alt="フランス地図" class="map-img" />
+        </div>
+
+        <!-- 接続線（※SVGや画像等で表現） -->
+        <svg class="connecting-lines" viewBox="0 0 1000 650">
+          <!-- 左カードへの線 -->
+          <path
+            d="M 370 430 C 280 430, 220 420, 160 430"
+            stroke="#6b231a"
+            stroke-width="2.5"
+            fill="none"
+          />
+          <!-- 右上カードへの線 -->
+          <path
+            d="M 550 130 C 620 180, 680 180, 750 200"
+            stroke="#6b231a"
+            stroke-width="2.5"
+            fill="none"
+          />
+          <!-- 右下カードへの線 -->
+          <path
+            d="M 650 390 C 680 400, 720 420, 780 430"
+            stroke="#6b231a"
+            stroke-width="2.5"
+            fill="none"
+          />
+        </svg>
+
+        <!-- チェキ風カード1（左 / ピンクテープ） -->
+        <div class="polaroid polaroid-left">
+          <div class="tape tape-pink"></div>
+          <label class="photo-upload-area">
+            <input type="file" accept="image/*" class="file-input" />
+            <div class="photo-placeholder">
+              <span class="upload-icon">📷</span>
+              <span class="upload-text">クリックして写真を追加</span>
+            </div>
+            <img class="preview-img" alt="アップロード画像" />
+          </label>
+        </div>
+
+        <!-- チェキ風カード2（右上 / 青テープ） -->
+        <div class="polaroid polaroid-top-right">
+          <div class="tape tape-blue"></div>
+          <label class="photo-upload-area">
+            <input type="file" accept="image/*" class="file-input" />
+            <div class="photo-placeholder">
+              <span class="upload-icon">📷</span>
+              <span class="upload-text">クリックして写真を追加</span>
+            </div>
+            <img class="preview-img" alt="アップロード画像" />
+          </label>
+        </div>
+
+        <!-- チェキ風カード3（右下 / 白テープ） -->
+        <div class="polaroid polaroid-bottom-right">
+          <div class="tape tape-white"></div>
+          <label class="photo-upload-area">
+            <input type="file" accept="image/*" class="file-input" />
+            <div class="photo-placeholder">
+              <span class="upload-icon">📷</span>
+              <span class="upload-text">クリックして写真を追加</span>
+            </div>
+            <img class="preview-img" alt="アップロード画像" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 写真アップロード処理用JavaScript -->
+    <script>
+      document.querySelectorAll(".file-input").forEach((input) => {
+        input.addEventListener("change", function (e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            const uploadArea = this.closest(".photo-upload-area");
+            const previewImg = uploadArea.querySelector(".preview-img");
+            const placeholder = uploadArea.querySelector(".photo-placeholder");
+
+            reader.onload = function (event) {
+              previewImg.src = event.target.result;
+              previewImg.style.display = "block";
+              placeholder.style.display = "none";
+            };
+
+            reader.readAsDataURL(file);
+          }
+        });
+      });
+    </script>
   </body>
 </html>

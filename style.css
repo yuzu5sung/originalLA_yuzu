@@ -8,18 +8,243 @@
   margin: 0;
   padding: 0;
 }
+/* 全体の基本設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2e9e1; /* ベージュ背景 */
+  color: #3d231d; /* ブラウン文字色 */
+  font-family:
+    "Helvetica Neue", Arial, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
+    "メイリオ", sans-serif;
+  line-height: 1.6;
+}
+
+/* ヘッダー */
+.header {
+  padding: 30px 50px 0;
+  text-align: right;
+}
+
+.nav a {
+  color: #3d231d;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 30px;
+}
+
+/* --- 1セクション目：HERO --- */
+.hero {
+  max-width: 1000px;
+  margin: 40px auto 0;
+  padding: 0 20px 100px;
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.photo-box {
+  flex: 0 0 45%;
+  background-color: #ffffff;
+  padding: 16px 16px 50px 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 280px;
+  background-color: #eee;
+}
+.content {
+  flex: 1;
+  z-index: 1;
+}
+
+/* 見出し（HTMLのクラス名 .heading に修正） */
+.heading {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  margin-bottom: 25px;
+}
+
+.sub-heading {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.description {
+  font-size: 0.88rem;
+  color: #5a4037;
+  line-height: 1.8;
+}
+.hero-title-overlay {
+  position: absolute;
+  bottom: -25px;
+  right: 80px;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: #3d231d;
+  z-index: 2;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* --- 2セクション目：How to use --- */
+.how-to-use {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 120px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: #3d231d;
+  margin-bottom: 50px;
+}
+
+/* ステップ全体レイアウト */
+.step-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Step1, Step3 はテキスト左・画像右 */
+.step-1,
+.step-3 {
+  padding-right: 40px;
+}
+
+/* Step2 は画像左・テキスト右 */
+.step-2 {
+  padding-left: 40px;
+}
+
+.step-text {
+  max-width: 480px;
+}
+
+.step-heading {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: #5a4037;
+  line-height: 1.7;
+}
+
+/* 画像表示枠とバッジ */
+.step-img-box {
+  position: relative;
+  min-width: 120px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-img {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* start / goal バッジ */
+.badge {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.start-badge {
+  top: 10px;
+  right: -50px;
+}
+
+.goal-badge {
+  bottom: -15px;
+  right: 0px;
+}
+
+/* レスポンシブ（スマホ表示時） */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-title-overlay {
+    font-size: 3rem;
+    right: 20px;
+    bottom: -15px;
+  }
+
+  .step-item {
+    flex-direction: column !important;
+    text-align: left;
+    padding: 0 !important;
+    gap: 20px;
+  }
+
+  .step-img-box {
+    align-self: center;
+  }
+}
+
 .container {
-  background-image: url(img/haikei.jpg);
+  background-color: #f2e9e1;
   background-size: cover;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 20px;
+  width: 100%;
 }
 .photos {
   display: grid;
   gap: 16px 26px;
   grid-template-columns: 146px 150px 167px 68px 67px 265px;
   grid-template-rows: 208px 102px 100px 60px 4% 45px 32px 100px;
-  margin: 163px 330px;
+  margin: 163px auto;
+  width: fit-content;
 }
 
 .photos img {
@@ -98,4 +323,320 @@
   color: #432720;
   font-size: 50px;
   transform: translateY(50px);
+}
+body {
+  background-color: #f2e9e1;
+  color: #3d231d;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* セクション設定 */
+.collection-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: #3d231d;
+  margin-bottom: 20px;
+}
+
+/* マップ・コンテナ */
+.map-container {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 中央の地図画像枠 */
+.map-box {
+  width: 480px;
+  max-width: 90%;
+  z-index: 1;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* つなぎ線SVG */
+.connecting-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* チェキ風ポラロイドカード共通 */
+.polaroid {
+  position: absolute;
+  width: 200px;
+  background-color: #ffffff;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 3;
+  transition: transform 0.2s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  z-index: 10;
+}
+
+/* 各カードの位置・傾き調整 */
+.polaroid-left {
+  top: 220px;
+  left: 20px;
+  transform: rotate(-6deg);
+}
+
+.polaroid-top-right {
+  top: 40px;
+  right: 40px;
+  transform: rotate(5deg);
+}
+
+.polaroid-bottom-right {
+  bottom: 30px;
+  right: 60px;
+  transform: rotate(8deg);
+}
+
+/* マスキングテープ */
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 22px;
+  opacity: 0.85;
+  z-index: 4;
+}
+
+.tape-pink {
+  background-color: #f38289;
+}
+.tape-blue {
+  background-color: #8c90d9;
+}
+.tape-white {
+  background-color: #e6e2db;
+}
+
+/* 写真アップロード・表示エリア */
+.photo-upload-area {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #dcdcdc;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.file-input {
+  display: none;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #777777;
+  padding: 10px;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.upload-text {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .map-container {
+    flex-direction: column;
+    min-height: auto;
+    gap: 30px;
+  }
+
+  .connecting-lines {
+    display: none;
+  }
+
+  .polaroid {
+    position: static;
+    transform: none !important;
+    width: 240px;
+    margin: 0 auto;
+  }
+}
+
+.france-page {
+  background-color: #f2e9e1;
+}
+
+/* トリコロール・ヘッダー */
+.france-header {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.header-flag {
+  display: flex;
+  height: 200px;
+  width: 100%;
+}
+
+.flag-blue {
+  flex: 1;
+  background-color: #b7c4ff;
+}
+
+.flag-white {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-red {
+  flex: 1;
+  background-color: #ffb7be;
+}
+
+.france-title {
+  font-family: Georgia, serif;
+  font-size: 3.2rem;
+  font-style: italic;
+  font-weight: 900;
+  color: #3d231d;
+  letter-spacing: 0.05em;
+}
+
+/* メインコンテナ */
+.france-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* 各スイーツブロック */
+.sweets-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.flex-right {
+  flex-direction: row;
+}
+
+.flex-left {
+  flex-direction: row-reverse;
+}
+
+/* ミッション画像エリア */
+.mission-img-box {
+  flex: 0 0 220px;
+}
+
+/* スイーツ＋テキストのボックス */
+.content-box {
+  flex: 1;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 画像枠共通 */
+.img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 説明テキスト */
+.sweets-desc {
+  font-size: 0.8rem;
+  color: #5a4037;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* 下部戻るボタン */
+.back-link-box {
+  text-align: center;
+  border-top: 1px solid #3d231d;
+  padding-top: 25px;
+  width: 200px;
+  margin: 20px auto 0;
+}
+
+.back-link {
+  color: #3d231d;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .sweets-block {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+
+  .mission-img-box,
+  .content-box {
+    width: 100%;
+    max-width: 320px;
+  }
 }
